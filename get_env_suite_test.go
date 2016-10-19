@@ -1,0 +1,16 @@
+package main_test
+
+import (
+	"code.cloudfoundry.org/cli/testhelpers/pluginbuilder"
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
+	"testing"
+)
+
+func TestTestRpcServerExample(t *testing.T) {
+	RegisterFailHandler(Fail)
+
+	pluginbuilder.BuildTestBinary("", "get_env")
+
+	RunSpecs(t, "GetEnv Suite")
+}
